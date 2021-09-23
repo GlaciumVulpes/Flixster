@@ -10,7 +10,7 @@ import java.util.List;
 
 @Parcel
 public class Movie {
-
+    int movieID;
     String backdropPath;
     String posterPath;
     String title;
@@ -23,6 +23,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         rating = jsonObject.getDouble("vote_average");
+        movieID = jsonObject.getInt("id");
     }
     //empty constructor needed by the Parceler library
     public Movie() {
@@ -50,6 +51,10 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public int getMovieID() {
+        return movieID;
     }
 
     public double getRating() {
